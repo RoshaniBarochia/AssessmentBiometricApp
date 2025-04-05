@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Assessment" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary Colors -->
+        <item name="colorPrimary">#6200EE</item>
+        <item name="colorPrimaryVariant">#3700B3</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Background & Surface -->
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="colorSurface">#F5F5F5</item>
+        <item name="colorOnSurface">#000000</item>
+    </style>
+
+
+    <style name="Theme.Assessment" parent="Base.Theme.Assessment" />
+</resources>

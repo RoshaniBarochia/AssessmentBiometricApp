@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Assessment</string>
+    <string name="user">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="status">Status</string>
+    <string name="date">Date</string>
+    <string name="amount">Amount</string>
+    <string name="rupee_symbol">\u20B9</string>
+    <string name="search_transactions">Search Transactions</string>
+</resources>
