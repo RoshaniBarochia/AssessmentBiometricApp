@@ -2,14 +2,12 @@
     Android applications in Kotlin and Java that demonstrate API integration, biometric authentication, secure token handling, and user-friendly interfaces.
 
 # Project Overview.
-    This project is a secure transaction management application that allows users to authenticate, fetch transactions, and manage their sessions securely. It includes biometric authentication and encrypted token storage for enhanced security.
-
+    This Android application allows users to authenticate securely, fetch transaction data from an API, and view it in a searchable list. The app also includes biometric authentication and offline access via Room Database.
 
 # Setup Instructions 
 
    1. Clone the Repository:
    git clone https://github.com/RoshaniBarochia/AssessmentBiometricApp
-   cd your-repo-name
 
    2. Open in Android Studio:
    Open Android Studio and select "Open an existing project."
@@ -20,22 +18,18 @@
    Sync the project by clicking "Sync Now" in Android Studio.
 
    4. Configure API Base URL:
-   Open gradle.properties and ensure the base URL is set:
-   BASE_URL="https://api.prepstripe.com/"
+   Add your BASE_URL and MASTER_KEY_ALIAS in your gradle.properties:
+      BASE_URL=https://api.prepstripe.com/
+      MASTER_KEY_ALIAS=your_master_key_alias
 
-   5. Run the App:
-   Connect a physical device or start an emulator.
-   Click "Run" to install and launch the application.
+   5. Build the project:
+      Sync Gradle and build the project using Build > Make Project or Ctrl+F9.
 
-# APK Build Instructions
+# Signed APK Build Instructions
 
-   1. Build the APK using Gradle:
+   1. Build the Signed APK using Gradle:
    ./gradlew assembleRelease
-   The APK will be generated inside the app/build/outputs/apk/release/ directory.
-
-   2. Generate a Signed APK (For Production):
-   Go to Android Studio: Build > Generate Signed Bundle / APK...
-   Follow the wizard to sign the APK with a keystore.
+   The APK will be generated inside the app/build/outputs/apk/release/app_release.apk directory.
 
 # Features Available
 
