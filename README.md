@@ -29,7 +29,7 @@
 
    1. Build the Signed APK using Gradle:
    ./gradlew assembleRelease
-   The APK will be generated inside the app/build/outputs/apk/release/app_release.apk directory.
+   The APK will be generated inside the assessmentBiometricApp/app_release.apk directory.
 
 # Features Available
 
