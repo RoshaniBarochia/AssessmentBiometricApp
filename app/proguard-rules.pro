@@ -20,40 +20,70 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 # Keep model classes with Gson (or Moshi)
+# ========== General ==========
+-keepattributes *Annotation*, Signature, Exceptions, InnerClasses, EnclosingMethod, RuntimeVisibleAnnotations, AnnotationDefault
+
+# Prevent removing classes annotated with @Keep
+-keep @androidx.annotation.Keep class * { *; }
+-keepclassmembers class * {
+    @androidx.annotation.Keep *;
+}
+
+# Retrofit and OkHttp
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keep interface retrofit2.** { *; }
+
+# Keep annotations for Retrofit to resolve generic types
+-keepattributes Signature, RuntimeVisibleAnnotations, RuntimeInvisibleAnnotations, AnnotationDefault
+
+# Keep all model classes with their fields and generics
 -keepclassmembers class com.app.assessment.model.** {
     <fields>;
     <methods>;
 }
 
-# Retrofit
--dontwarn okhttp3.**
--dontwarn retrofit2.**
--keep class retrofit2.** { *; }
--keepattributes Signature
--keepattributes Exceptions
+# Keep suspend functions metadata
+-keepclassmembers class * {
+    @kotlin.Metadata *;
+}
 
-# Gson
+
+# ========== Gson ==========
 -keep class com.google.gson.** { *; }
 -keepattributes *Annotation*
 
-# Hilt / Dagger
+# ========== Kotlin Coroutines ==========
+-dontwarn kotlinx.coroutines.**
+-keepclassmembers class * {
+    @kotlin.coroutines.** <methods>;
+}
+
+# ========== Room Database ==========
+-keep class androidx.room.** { *; }
+-keepclassmembers class * {
+    @androidx.room.* <methods>;
+    @androidx.room.* <fields>;
+}
+
+# ========== Dagger / Hilt ==========
 -keep class dagger.** { *; }
+-keep interface dagger.** { *; }
 -keep class javax.inject.** { *; }
 
-# Keep Room entities and DAOs
--keep class androidx.room.** { *; }
--keep class com.app.assessment.data.** { *; }
+# Needed for Hilt code generation
+-keep class * extends dagger.hilt.internal.GeneratedComponent { *; }
+-keep class * extends dagger.hilt.android.internal.managers.* { *; }
 
-# Biometric / Security Crypto
+# ========== AndroidX Biometric & Security ==========
 -keep class androidx.biometric.** { *; }
 -keep class androidx.security.** { *; }
 
-# Kotlin coroutines
--dontwarn kotlinx.coroutines.**
+# ========== Application / Activities ==========
+-keep class com.app.assessment.MyApp { *; }
+#-keep class com.app.assessment.MainActivity { *; }
 
-# Prevent removing @Keep
 -keep @androidx.annotation.Keep class * { *; }
 
-# Optional: Keep MainActivity and Application
--keep class com.app.assessment.MainActivity { *; }
--keep class com.app.assessment.MyApp { *; }
+

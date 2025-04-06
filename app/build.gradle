@@ -24,10 +24,6 @@ android {
     }
     signingConfigs {
         release {
-            /*storeFile file("release_key.jks")
-            storePassword System.getenv("assessment2025")
-            keyAlias System.getenv("assessment")
-            keyPassword System.getenv("assessment2025")*/
             storeFile file(RELEASE_STORE_FILE)
             storePassword RELEASE_STORE_PASSWORD
             keyAlias RELEASE_KEY_ALIAS

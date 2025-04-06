@@ -1,8 +1,10 @@
 package com.app.assessment.model
 
+import androidx.annotation.Keep
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Keep
 @Entity(tableName = "transactions")
 data class Transaction (
 
